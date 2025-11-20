@@ -1,0 +1,3 @@
+10.0.0.15 - - [12/Nov/2023:10:00:01 +0000] "GET / HTTP/1.1" 200 3458 "-" "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/115.0.0.0 Safari/537.36"
+10.0.0.15 - - [12/Nov/2023:10:00:02 +0000] "GET /css/style.css HTTP/1.1" 304 - "http://mysite.com/" "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+66.249.66.1 - - [12/Nov/2023:10:05:19 +0000] "GET /robots.txt HTTP/1.1" 200 102 "-" "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" 

@@ -1,0 +1,4 @@
+failed_login by_ip >= 1 ALERT
+failed_login >= 1 ALERT
+404 by_ip >= 3 WARNING
+ip_requests by_ip >= 3 WARNING

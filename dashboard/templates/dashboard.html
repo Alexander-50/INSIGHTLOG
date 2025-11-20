@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full">
+<head>
+    <meta charset="UTF-8">
+    <title>InsightLog Dashboard</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body class="bg-slate-50 h-full">
+
+<!-- Header -->
+<div class="w-full flex justify-between p-4 border-b bg-white shadow">
+    <div>
+        <h1 class="text-2xl font-bold">InsightLog Dashboard</h1>
+        <p class="text-sm text-slate-500">InsightLog — Security Monitoring</p>
+    </div>
+
+    <div class="flex items-center space-x-3">
+        <!-- ➤ NEW PDF Button -->
+        <a href="/export/pdf"
+           class="px-3 py-2 bg-indigo-600 text-white rounded shadow text-sm">
+            Download PDF
+        </a>
+
+        <button id="dark-toggle"
+                class="px-3 py-1 bg-slate-800 text-white rounded shadow text-sm">
+            Toggle Dark Mode
+        </button>
+    </div>
+</div>
+
+<div class="flex">
+
+    <!-- Sidebar -->
+    <div class="w-48 h-screen border-r p-3 bg-white">
+        <button class="navbtn w-full p-2 my-1 bg-slate-100 rounded text-left" data-tab="overview">Overview</button>
+        <button class="navbtn w-full p-2 my-1 rounded text-left" data-tab="alerts">Alerts</button>
+        <button class="navbtn w-full p-2 my-1 rounded text-left" data-tab="timeline">Timeline</button>
+        <button class="navbtn w-full p-2 my-1 rounded text-left" data-tab="correlations">Correlations</button>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-6 space-y-6">
+
+        <!-- Overview -->
+        <div id="tab-overview" class="tabcontent">
+            <h2 class="text-xl font-bold mb-3">Overview</h2>
+
+            <div class="grid grid-cols-3 gap-4">
+                <div class="card p-4">
+                    <h3 class="font-semibold">Last Updated</h3>
+                    <p id="last-updated" class="text-lg font-bold">-</p>
+                </div>
+                <div class="card p-4">
+                    <h3 class="font-semibold">Total Records</h3>
+                    <p id="total-records" class="text-lg font-bold">0</p>
+                </div>
+                <div class="card p-4">
+                    <h3 class="font-semibold">Active Alerts</h3>
+                    <p id="active-alerts" class="text-lg font-bold">0</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-6 mt-6">
+                <div class="card p-4">
+                    <h3 class="font-semibold mb-2">Top IPs</h3>
+                    <canvas id="ipsChart"></canvas>
+                </div>
+
+                <div class="card p-4">
+                    <h3 class="font-semibold mb-2">Status Codes</h3>
+                    <canvas id="statusChart"></canvas>
+                </div>
+
+                <div class="card p-4">
+                    <h3 class="font-semibold mb-2">Top URLs</h3>
+                    <canvas id="urlsChart"></canvas>
+                </div>
+
+                <div class="card p-4">
+                    <h3 class="font-semibold mb-2">Alert Severity</h3>
+                    <canvas id="sevChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- Alerts -->
+        <div id="tab-alerts" class="tabcontent hidden">
+            <h2 class="text-xl font-bold mb-3">Alerts</h2>
+            <div id="alerts-list" class="space-y-4"></div>
+        </div>
+
+        <!-- Timeline -->
+        <div id="tab-timeline" class="tabcontent hidden">
+            <h2 class="text-xl font-bold mb-3">Attack Timeline</h2>
+
+            <div class="card p-4 mb-4" style="height:300px; overflow:hidden;">
+                <h3 class="font-semibold mb-2">Event Timeline</h3>
+                <div style="height:240px;">
+                    <canvas id="timelineChart"></canvas>
+                </div>
+            </div>
+
+            <div class="card p-4">
+                <h3 class="font-semibold mb-2">Latest Events</h3>
+                <div id="timeline-list" class="space-y-3 max-h-96 overflow-auto"></div>
+            </div>
+        </div>
+
+        <!-- Correlations -->
+        <div id="tab-correlations" class="tabcontent hidden">
+            <h2 class="text-xl font-bold mb-3">Correlations</h2>
+            <div id="corr-list" class="space-y-3"></div>
+        </div>
+    </div>
+</div>
+
+<script src="/static/dashboard.js"></script>
+
+</body>
+</html>

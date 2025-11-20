@@ -1,0 +1,5 @@
+agent,ip,method,referer,severity,size,status,timestamp,url
+Go-http-client/1.1,192.168.1.200,GET,-,WARNING,198,404,12/Nov/2023:11:45:01 +0000,/.env
+Go-http-client/1.1,192.168.1.200,GET,-,WARNING,198,404,12/Nov/2023:11:45:01 +0000,/.git/config
+Go-http-client/1.1,192.168.1.200,GET,-,WARNING,198,404,12/Nov/2023:11:45:02 +0000,/admin.php
+Go-http-client/1.1,192.168.1.200,GET,-,WARNING,198,404,12/Nov/2023:11:45:02 +0000,/backup.sql

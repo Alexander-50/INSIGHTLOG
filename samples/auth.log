@@ -1,0 +1,6 @@
+Oct 28 06:25:01 production-server CRON[12931]: (root) CMD (test -x /usr/sbin/anacron || ( cd / && run-parts --report /etc/cron.daily ))
+Oct 28 06:25:05 production-server sshd[12935]: Accepted publickey for ubuntu from 192.168.1.45 port 50222 ssh2: RSA SHA256:y5+...
+Oct 28 06:25:05 production-server sshd[12935]: pam_unix(sshd:session): session opened for user ubuntu by (uid=0)
+Oct 28 06:25:15 production-server sudo:   ubuntu : TTY=pts/0 ; PWD=/home/ubuntu ; USER=root ; COMMAND=/usr/bin/cat /var/log/auth.log
+Oct 28 10:15:22 production-server sshd[23001]: Invalid user admin from 218.92.1.15 port 44212
+Oct 28 10:15:24 production-server sshd[23001]: Failed password for invalid user admin from 218.92.1.15 port 44212 ssh2

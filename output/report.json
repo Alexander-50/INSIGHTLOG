@@ -1,0 +1,213 @@
+{
+  "summary": {
+    "top_ips": [
+      [
+        "192.168.1.200",
+        4
+      ]
+    ],
+    "status_counts": [
+      [
+        404,
+        4
+      ]
+    ],
+    "top_urls": [
+      [
+        "/.env",
+        1
+      ],
+      [
+        "/.git/config",
+        1
+      ],
+      [
+        "/admin.php",
+        1
+      ],
+      [
+        "/backup.sql",
+        1
+      ]
+    ],
+    "total_records": 4,
+    "generated_at": "2025-11-19T20:11:00.508772Z"
+  },
+  "suspicious_patterns": {
+    "404_flood_candidates": [
+      [
+        "192.168.1.200",
+        4
+      ]
+    ],
+    "failed_login_candidates": []
+  },
+  "records": [
+    {
+      "ip": "192.168.1.200",
+      "timestamp": "12/Nov/2023:11:45:01 +0000",
+      "method": "GET",
+      "url": "/.env",
+      "status": 404,
+      "size": "198",
+      "referer": "-",
+      "agent": "Go-http-client/1.1",
+      "severity": "WARNING"
+    },
+    {
+      "ip": "192.168.1.200",
+      "timestamp": "12/Nov/2023:11:45:01 +0000",
+      "method": "GET",
+      "url": "/.git/config",
+      "status": 404,
+      "size": "198",
+      "referer": "-",
+      "agent": "Go-http-client/1.1",
+      "severity": "WARNING"
+    },
+    {
+      "ip": "192.168.1.200",
+      "timestamp": "12/Nov/2023:11:45:02 +0000",
+      "method": "GET",
+      "url": "/admin.php",
+      "status": 404,
+      "size": "198",
+      "referer": "-",
+      "agent": "Go-http-client/1.1",
+      "severity": "WARNING"
+    },
+    {
+      "ip": "192.168.1.200",
+      "timestamp": "12/Nov/2023:11:45:02 +0000",
+      "method": "GET",
+      "url": "/backup.sql",
+      "status": 404,
+      "size": "198",
+      "referer": "-",
+      "agent": "Go-http-client/1.1",
+      "severity": "WARNING"
+    }
+  ],
+  "alerts": [
+    {
+      "rule": "404 by_ip >= 3 WARNING",
+      "severity": "WARNING",
+      "type": "per_ip",
+      "ip": "192.168.1.200",
+      "metric": "404",
+      "count": 4,
+      "message": "Rule 404 by_ip >= 3 WARNING triggered for 192.168.1.200 (count=4)"
+    },
+    {
+      "rule": "ip_requests by_ip >= 3 WARNING",
+      "severity": "WARNING",
+      "type": "per_ip",
+      "ip": "192.168.1.200",
+      "metric": "ip_requests",
+      "count": 4,
+      "message": "Rule ip_requests by_ip >= 3 WARNING triggered for 192.168.1.200 (count=4)"
+    },
+    {
+      "type": "burst",
+      "metric": "ip_requests",
+      "ip": "192.168.1.200",
+      "windows_triggered": [
+        5,
+        30,
+        300
+      ],
+      "counts": {
+        "5": 3,
+        "30": 3,
+        "300": 3
+      },
+      "threshold": 3,
+      "severity": "CRITICAL",
+      "message": "Burst detected for 192.168.1.200: 5s, 30s, 300s windows exceeded 3"
+    },
+    {
+      "type": "burst",
+      "metric": "ip_requests",
+      "ip": "192.168.1.200",
+      "windows_triggered": [
+        5,
+        30,
+        300
+      ],
+      "counts": {
+        "5": 4,
+        "30": 4,
+        "300": 4
+      },
+      "threshold": 3,
+      "severity": "CRITICAL",
+      "message": "Burst detected for 192.168.1.200: 5s, 30s, 300s windows exceeded 3"
+    }
+  ],
+  "correlations": [
+    {
+      "type": "multi_alert",
+      "ip": "192.168.1.200",
+      "alert_count": 4,
+      "message": "IP 192.168.1.200 triggered 4 alerts (multi-rule)"
+    }
+  ],
+  "timeline": [
+    {
+      "timestamp": "2023-11-12T11:45:01+00:00",
+      "type": "record",
+      "event": "record",
+      "ip": "192.168.1.200",
+      "severity": "WARNING",
+      "message": "/.env"
+    },
+    {
+      "timestamp": "2023-11-12T11:45:01+00:00",
+      "type": "record",
+      "event": "record",
+      "ip": "192.168.1.200",
+      "severity": "WARNING",
+      "message": "/.git/config"
+    },
+    {
+      "timestamp": "2023-11-12T11:45:02+00:00",
+      "type": "record",
+      "event": "record",
+      "ip": "192.168.1.200",
+      "severity": "WARNING",
+      "message": "/admin.php"
+    },
+    {
+      "timestamp": "2023-11-12T11:45:02+00:00",
+      "type": "record",
+      "event": "record",
+      "ip": "192.168.1.200",
+      "severity": "WARNING",
+      "message": "/backup.sql"
+    },
+    {
+      "timestamp": "2023-11-12T11:45:02+00:00",
+      "type": "per_ip",
+      "event": "404 by_ip >= 3 WARNING",
+      "ip": "192.168.1.200",
+      "severity": "WARNING",
+      "message": "Rule 404 by_ip >= 3 WARNING triggered for 192.168.1.200 (count=4)"
+    },
+    {
+      "timestamp": "2023-11-12T11:45:02+00:00",
+      "type": "per_ip",
+      "event": "ip_requests by_ip >= 3 WARNING",
+      "ip": "192.168.1.200",
+      "severity": "WARNING",
+      "message": "Rule ip_requests by_ip >= 3 WARNING triggered for 192.168.1.200 (count=4)"
+    },
+    {
+      "timestamp": "2023-11-12T11:45:02+00:00",
+      "type": "multi_alert",
+      "event": "multi_alert",
+      "ip": "192.168.1.200",
+      "severity": "ALERT",
+      "message": "IP 192.168.1.200 triggered 4 alerts (multi-rule)"
+    }
+  ]
+}
