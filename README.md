@@ -237,11 +237,6 @@ will generate popup visual charts such as:
 python insightlog.py --type <apache|syslog> --file <logfile> --plot
 ```
 
-### Example screenshots (add below):
-
-> *(Insert images of the charts here)*
-
----
 
 # 🚀 Usage (CLI)
 
@@ -464,6 +459,9 @@ Includes:
 
 ## 🕒 Timeline View
 <img width="1900" height="933" alt="timeline" src="https://github.com/user-attachments/assets/aa6f397f-7dc8-4240-9f17-8f975d67f00f" />
+
+## ⚠ Alerts View
+<img width="1905" height="512" alt="alerts" src="https://github.com/user-attachments/assets/d7c4cbe0-4610-49d8-95df-5c20bb6aeeac" />
 
 
 ## 🔗 Correlation View
